@@ -9,7 +9,6 @@ buildNumber.properties
 .mvn/timing.properties
 .settings/
 test-output/
-resources/
 
 
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)

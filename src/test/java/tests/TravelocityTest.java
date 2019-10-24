@@ -1,9 +1,13 @@
 package tests;
 
+import static org.testng.Assert.assertEquals;
+
 import org.testng.annotations.Test;
 
 import pages.AbstractTest;
+import pages.PageFlightTC;
 import pages.PageHomeTC;
+import pages.PageResultTC;
 
 
 public class TravelocityTest extends AbstractTest {
@@ -14,9 +18,14 @@ public class TravelocityTest extends AbstractTest {
 	}
 	
 	@Test
-	public void FindFligh() {
+	public void FindFligh() throws InterruptedException {
 		PageHomeTC home = new PageHomeTC(getDriver());
-		home.ClickLink();
+		PageFlightTC Fligth=home.ClickLink();
+		PageResultTC Res=Fligth.SearchFly();
+		String result=Res.Title();
+		System.out.println(result);
+		assertEquals(result, "RES to COR Flights | Travelocity");
+		
 	}
 
 }
